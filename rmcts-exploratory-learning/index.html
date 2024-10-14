@@ -386,7 +386,7 @@
         <div class="rows">
             <div class="rows is-centered ">
                 <h2 class="title is-3">
-                    <span class="dvima">Self-Learning</span>
+                    <span class="dvima">Exploratory Learning</span>
                 </h2>
                 <div class="row is-full-width">
                     <p style="font-size: 125%">
@@ -395,9 +395,9 @@
                         states, and backtrack to viable states when facing unpromising states. In our experiments with VisualWebArena, we find that:
                     </p>
                     <ul style="font-size: 125%">
-                        <li>Exploratory Learning <strong>boosts performance</strong>: GPT-4o fine-tuned with Exploratory Learning improves performance, even without search, similar to the effects of scaling test-time compute with MCTS.</li>
+                        <li>Exploratory Learning <strong>boosts performance</strong>: GPT-4o fine-tuned with Exploratory Learning improves performance, even without search, similar to the effects of scaling test-time compute with MCTS (see demo (c) and (d) below).</li>
                         <li>Exploratory Learning <strong>enables test-time compute scaling</strong>: The fine-tuned GPT-4o exhibits better performance when allowed more actions per task, enhancing decision-making and task completion.</li>
-                        <li>Exploratory Learning <strong>improves generalization to unseen tasks</strong>: The fine-tuned GPT-4o demonstrates improved generalization to novel tasks through these capabilities, as shown in demo (c) and (d) below.</li>
+                        <li>Exploratory Learning <strong>improves generalization to unseen tasks</strong>: The fine-tuned GPT-4o demonstrates improved performance on unseen tasks compared to no training/imitation learning on best actions.</li>
                     </ul>
                 </div>
                 <br/>
@@ -459,7 +459,7 @@
                 </div>
                 <div class="rows">
                     <div class="row task-intent">
-                        <p class="task-intent-text">Task: Search for "MCAT" and navigate to the prep book that has 2020-2021 on the cover.
+                        <p class="task-intent-text">Task: Find the most recently listed coffee maker with a touch screen. Add a 5 star rating with title "Great item" and text "Would recommend!".
                         </p>
                     </div>
                     <div class="item">
@@ -471,13 +471,13 @@
                         </video>
                     </div>
                     <div class="row">
-                        <p class="caption" style="margin: 13px"> (c) After explorative learning, GPT-4o demonstrates the ability to explore, evaluate, and backtrack <em>without augmenting with
+                        <p class="caption" style="margin: 13px"> (c) After exploratory learning, GPT-4o demonstrates the ability to explore, evaluate, and backtrack <em>without augmenting with
                             search algorithms.</em></p>
                     </div>
                 </div>
                 <div class="rows">
                     <div class="row task-intent">
-                        <p class="task-intent-text">Task: Find the most recently listed coffee maker with a touch screen. Add a 5 star rating with title "Great item" and text "Would recommend!".
+                        <p class="task-intent-text">Task: Search for "MCAT" and navigate to the prep book that has 2020-2021 on the cover.
                         </p>
                     </div>
                     <div class="item">
@@ -489,7 +489,7 @@
                         </video>
                     </div>
                     <div class="row">
-                        <p class="caption" style="margin: 13px"> (d) After explorative learning, GPT-4o demonstrates the ability to explore, evaluate, and backtrack <em>without augmenting with
+                        <p class="caption" style="margin: 13px"> (d) After exploratory learning, GPT-4o demonstrates the ability to explore, evaluate, and backtrack <em>without augmenting with
                             search algorithms.</em></p>
                     </div>
                 </div>
