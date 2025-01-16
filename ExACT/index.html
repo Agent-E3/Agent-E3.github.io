@@ -374,6 +374,205 @@
                 <p class="caption">Comparing different agent's token consumption and performance on VisualWebArena. We show the average token used per task
                 using REACT as a baseline. SA stands for single-agent; MAD stands for multi-agent debate.
                 </p>
+                <!-- RMCTS OSWorld result -->
+                <br/>
+                <div class="row is-full-width">
+                    <p style="font-size: 125%">
+                        We then extended our R-MCTS agent to OSWorld, and directly compare R-MCTS performance against other methods on the leaderboard. We find that R-MCTS
+                        shows competitive performance compared other state-of-the-art methods, despite only using on a single model with a search algorithm.
+                    </p>
+                </div>
+                <br/>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2"><br/>Method</th>
+                            <th rowspan="2"><br/>Model</th>
+                            <th rowspan="2" align="center"><br/>Training</th>
+                            <th rowspan="2" align="center"><br/>Other Resources</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">OS</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Office</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Daily</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Profess.</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Workflow</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Overall</th>
+                        </tr>
+                        <tr>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <td>GPT-4o + SoM <sup><a href="https://arxiv.org/abs/2401.13649" target="_blank">[1]</a></sup></td> -->
+                        <tr style="border-bottom: 1px solid rgb(213, 213, 213);">
+                            <td>ReACT</td>
+                            <td>GPT-4o</td>
+                            <td align="center">✘</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">✘</td>
+                            <td align="center">41.7%</td>
+                            <td align="center">6.2%</td>
+                            <td align="center">12.3%</td>
+                            <td align="center">14.3%</td>
+                            <td align="center">7.5%</td>
+                            <td align="center">11.2%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245)">
+                            <td>Agent-S</td>
+                            <td>GPT-4o</td>
+                            <td align="center">✘</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">🌐</td>
+                            <td align="center">45.8%</td>
+                            <td align="center">13.8%</td>
+                            <td align="center">30.5%</td>
+                            <td align="center">36.7%</td>
+                            <td align="center">10.5%</td>
+                            <td align="center">20.6%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245)">
+                            <td>AgentStore(ICL)</td>
+                            <td>Hybrid</td>
+                            <td align="center">✘</td>
+                            <td align="center">✘</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">-</td>
+                            <td align="center">1.7%</td>
+                            <td align="center">32.1%</td>
+                            <td align="center">22.4%</td>
+                            <td align="center">-</td>
+                            <td align="center">13.6%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245)">
+                            <td>AgentStore(FT)</td>
+                            <td>Hybrid</td>
+                            <td align="center">✘</td>
+                            <td align="center">✔</td>
+                            <td align="center">-</td>
+                            <td align="center">15.4%</td>
+                            <td align="center">37.2%</td>
+                            <td align="center">12.2%</td>
+                            <td align="center">-</td>
+                            <td align="center">17.3%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245); border-bottom:1px solid rgb(213, 213, 213);">
+                            <td>AgentStore(AT)</td>
+                            <td>Hybrid</td>
+                            <td align="center">✘</td>
+                            <td align="center">✔</td>
+                            <td align="center">-</td>
+                            <td align="center">28.2%</td>
+                            <td align="center">37.2%</td>
+                            <td align="center">23.9%</td>
+                            <td align="center">-</td>
+                            <td align="center">23.9%</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgb(213, 213, 213)">
+                            <td>R-MCTS</td>
+                            <td>GPT-4o</td>
+                            <td align="center">✘</td>
+                            <td align="center">✘</td>
+                            <td align="center">45.8%</td>
+                            <td align="center">15.6%</td>
+                            <td align="center">25.3%</td>
+                            <td align="center">22.4%</td>
+                            <td align="center">11.5%</td>
+                            <td align="center">19.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="caption">Comparing different agent's performance on OSWorld, using screenshot + accessibility tree as input. "Training" indicates
+                    whether the method finetuned the agent model, and "Other Resources" indicates whether the method accessed additional resources such as web searches (🌐).
+                </p>
+                <!-- results with accessibility tree only -->
+                <br/>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2"><br/>Method</th>
+                            <th rowspan="2"><br/>Model</th>
+                            <th rowspan="2" align="center"><br/>Training</th>
+                            <th rowspan="2" align="center"><br/>Blind Test</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">OS</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Office</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Daily</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Profess.</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Workflow</th>
+                            <th colspan="1" align="center" style="border-bottom: 1px solid rgb(213, 213, 213);">Overall</th>
+                        </tr>
+                        <tr>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                            <th align="center">Success</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <td>GPT-4o + SoM <sup><a href="https://arxiv.org/abs/2401.13649" target="_blank">[1]</a></sup></td> -->
+                        <tr style="border-bottom: 1px solid rgb(213, 213, 213);">
+                            <td>ReACT</td>
+                            <td>GPT-4o</td>
+                            <td align="center">✘</td>
+                            <td align="center">✔</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">20.8%</td>
+                            <td align="center">7.0%</td>
+                            <td align="center">16.8%</td>
+                            <td align="center">16.3%</td>
+                            <td align="center">7.6%</td>
+                            <td align="center">11.4%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245)">
+                            <td>Learn-by-Interact</td>
+                            <td>Gemini-1.5-pro</td>
+                            <td align="center">✘</td>
+                            <td align="center">✘</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">10.3%</td>
+                        </tr>
+                        <tr style="background-color: rgb(245, 245, 245); border-bottom:1px solid rgb(213, 213, 213);">
+                            <td></td>
+                            <td>Claude-3.5-sonnet</td>
+                            <td align="center">✘</td>
+                            <td align="center">✘</td>
+                            <!-- <td>✔</td> -->
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">-</td>
+                            <td align="center">22.5%</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid rgb(213, 213, 213)">
+                            <td>R-MCTS</td>
+                            <td>GPT-4o</td>
+                            <td align="center">✘</td>
+                            <td align="center">✔</td>
+                            <td align="center">37.5%</td>
+                            <td align="center">10.4%</td>
+                            <td align="center">21.8%</td>
+                            <td align="center">24.5%</td>
+                            <td align="center">10.9%</td>
+                            <td align="center">16.6%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="caption">
+                    Comparing different agent's performance on OSWorld, using accessibility tree as input.
+                    "Training" indicates whether the method finetuned the agent model, and
+                    "Blind Test" indicates whether the method has <i>not</i> seen the test environment/applications prior to evaluation.
+                </p>
             </div>
         </div>
     </div>
